@@ -9,6 +9,8 @@
 
 ## Ma solution
 
+**La clause WHERE est utilisée dans chacune des solutions, juste, pour éviter d'avoir des caractère Japonais/Chinois etc.**
+
 ### 16.1
 
 ```sql
@@ -23,7 +25,7 @@ USE movies;
 SELECT title, vote_average, release_date
 FROM movie
 WHERE
-  title REGEXP "^[a-z]" -- Pour éviter d'avoir les films avec des caractères chinoix/japonais etc.
+  title REGEXP "^[a-z]"
 ORDER BY
   release_date DESC, vote_average DESC
 ```
@@ -40,13 +42,13 @@ USE movies;
  *     et trier les résultats par revenue net décroissant.
  *     Inclure uniquement les films avec un revenu net positif.
  **/
-    SELECT title, revenue, budget, (revenue - budget) as profit, (revenue / budget) as ROI_Retour_Sur_Investissement
-    FROM movie
-    WHERE
-    title REGEXP "^[a-z]" AND
-    (revenue - budget) > 0
-    ORDER BY
-    (revenue - budget) DESC
+SELECT title, revenue, budget, (revenue - budget) as profit, (revenue / budget) as ROI
+FROM movie
+WHERE
+  title REGEXP "^[a-z]" AND
+  (revenue - budget) > 0
+ORDER BY
+  (revenue - budget) DESC
 ```
 
 ### 16.3 - BONUS
