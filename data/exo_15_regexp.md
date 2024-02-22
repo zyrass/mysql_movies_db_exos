@@ -106,7 +106,7 @@ USE movies;
 SELECT title
 FROM movie
 WHERE
-  title REGEXP "(oo){2}" -- /!\ N'a pas l'air de fonctionner
+  title REGEXP "oo.*oo"
 ```
 
 ### 13.7
