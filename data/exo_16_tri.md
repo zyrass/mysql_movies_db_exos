@@ -42,7 +42,7 @@ USE movies;
  *     et trier les résultats par revenue net décroissant.
  *     Inclure uniquement les films avec un revenu net positif.
  **/
-SELECT title, revenue, budget, (revenue - budget) as profit, (revenue / budget) as ROI
+SELECT title, revenue, budget, (revenue - budget) as profit
 FROM movie
 WHERE
   title REGEXP "^[a-z]" AND
